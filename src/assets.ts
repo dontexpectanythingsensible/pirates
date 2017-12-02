@@ -6,6 +6,16 @@ export namespace Images {
 
         static getPNG(): string { return require('assets/cannonBall.png'); }
     }
+    export class DinghyDinghyLarge {
+        static getName(): string { return 'dinghyLarge'; }
+
+        static getPNG(): string { return require('assets/dinghy/dinghyLarge.png'); }
+    }
+    export class DinghyDinghySmall {
+        static getName(): string { return 'dinghySmall'; }
+
+        static getPNG(): string { return require('assets/dinghy/dinghySmall.png'); }
+    }
     export class EnemyEnemyShip {
         static getName(): string { return 'enemy_ship'; }
 

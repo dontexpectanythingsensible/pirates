@@ -13,10 +13,16 @@ export default class World extends Phaser.State {
     private waterLayer: Phaser.TilemapLayer = null;
     private layer: Phaser.TilemapLayer = null;
 
+    private dinghies: Phaser.Group = null;
+
     private ROTATION_SPEED = 180;
     private ACCELERATION = 200;
     private MAX_SPEED = 250;
     private DRAG = 40;
+
+    private crew: number = 1;
+    private crewLabel: Phaser.Text = null;
+    private crewLabelBg: Phaser.Text = null;
 
     public preload(): void {
         this.game.load.tilemap('islands', Assets.JSON.Map.getJSON(), null, Phaser.Tilemap.TILED_JSON);
@@ -30,6 +36,12 @@ export default class World extends Phaser.State {
 
         this.createBackground();
         this.createPlayer();
+        this.createUi();
+
+        this.dinghies = this.game.add.group();
+        const dinghy = this.game.add.sprite(this.game.world.centerX - 64, this.game.world.centerY + 64, Assets.Images.DinghyDinghySmall.getName());
+        this.game.physics.enable(dinghy, Phaser.Physics.ARCADE);
+        this.dinghies.add(dinghy);
 
         this.map.setCollisionBetween(0, 999, true, this.layer);
 
@@ -46,6 +58,7 @@ export default class World extends Phaser.State {
 
     public update(): void {
         this.game.physics.arcade.collide(this.ship, this.layer);
+        this.game.physics.arcade.collide(this.ship, this.dinghies, this.collectCrew, null, this);
 
         if (this.leftInput()) {
             this.ship.body.angularVelocity = -this.ROTATION_SPEED;
@@ -70,6 +83,49 @@ export default class World extends Phaser.State {
             // this.bullet.fireMany(positions);
         }
     }
+
+    private collectCrew(ship, dinghy): void {
+        console.log('collected!', ship, dinghy);
+        this.crew += 1;
+        this.updateCrew();
+        dinghy.kill();
+    }
+
+    private createUi(): void {
+        this.crewLabelBg = this.game.add.text(
+            75,
+            75,
+            `Crew: ${ this.crew }`,
+            {
+                font: '40px Boogaloo',
+                fill: '#00b5bf'
+            });
+        this.crewLabelBg.alpha = 0;
+        this.crewLabelBg.anchor.setTo(0.5, 0.5);
+        this.crewLabelBg.fixedToCamera = true;
+
+        this.crewLabel = this.game.add.text(
+            75,
+            75,
+            `Crew: ${ this.crew }`,
+            {
+                font: '40px Boogaloo',
+                fill: '#00b5bf'
+            });
+        this.crewLabel.anchor.setTo(0.5, 0.5);
+        this.crewLabel.fixedToCamera = true;
+    }
+
+    updateCrew(): void {
+        this.crewLabel.setText(`Crew: ${ this.crew }`);
+        this.crewLabelBg.setText(`Crew: ${ this.crew }`);
+        this.crewLabelBg.alpha = 1;
+        this.game.add.tween(this.crewLabelBg).to({ alpha: 0 }, 300, Phaser.Easing.Linear.None, true);
+        this.crewLabelBg.scale.x = 1;
+        this.crewLabelBg.scale.y = 1;
+        this.game.add.tween(this.crewLabelBg.scale).to({ x: 2.5, y: 2}, 300, Phaser.Easing.Linear.None, true);
+    }
+
 
     private createBackground(): void {
         this.map = this.game.add.tilemap('islands');
