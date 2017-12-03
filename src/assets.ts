@@ -1,6 +1,11 @@
 /* AUTO GENERATED FILE. DO NOT MODIFY. YOU WILL LOSE YOUR CHANGES ON BUILD. */
 
 export namespace Images {
+    export class Anchor {
+        static getName(): string { return 'anchor'; }
+
+        static getPNG(): string { return require('assets/anchor.png'); }
+    }
     export class CannonBall {
         static getName(): string { return 'cannonBall'; }
 
@@ -16,6 +21,46 @@ export namespace Images {
 
         static getPNG(): string { return require('assets/dinghy/dinghySmall.png'); }
     }
+    export class EffectsExplosion1 {
+        static getName(): string { return 'explosion1'; }
+
+        static getPNG(): string { return require('assets/effects/explosion1.png'); }
+    }
+    export class EffectsExplosion2 {
+        static getName(): string { return 'explosion2'; }
+
+        static getPNG(): string { return require('assets/effects/explosion2.png'); }
+    }
+    export class EffectsExplosion3 {
+        static getName(): string { return 'explosion3'; }
+
+        static getPNG(): string { return require('assets/effects/explosion3.png'); }
+    }
+    export class EffectsFire1 {
+        static getName(): string { return 'fire1'; }
+
+        static getPNG(): string { return require('assets/effects/fire1.png'); }
+    }
+    export class EffectsFire2 {
+        static getName(): string { return 'fire2'; }
+
+        static getPNG(): string { return require('assets/effects/fire2.png'); }
+    }
+    export class EnemyEnemyShipDamage1 {
+        static getName(): string { return 'enemy_ship_damage_1'; }
+
+        static getPNG(): string { return require('assets/enemy/enemy_ship_damage_1.png'); }
+    }
+    export class EnemyEnemyShipDamage2 {
+        static getName(): string { return 'enemy_ship_damage_2'; }
+
+        static getPNG(): string { return require('assets/enemy/enemy_ship_damage_2.png'); }
+    }
+    export class EnemyEnemyShipDestroyed {
+        static getName(): string { return 'enemy_ship_destroyed'; }
+
+        static getPNG(): string { return require('assets/enemy/enemy_ship_destroyed.png'); }
+    }
     export class EnemyEnemyShip {
         static getName(): string { return 'enemy_ship'; }
 
@@ -26,6 +71,41 @@ export namespace Images {
 
         static getPNG(): string { return require('assets/images/background_template.png'); }
     }
+    export class ParticlesParticleBeige {
+        static getName(): string { return 'particle_beige'; }
+
+        static getPNG(): string { return require('assets/particles/particle_beige.png'); }
+    }
+    export class ParticlesParticleBrown {
+        static getName(): string { return 'particle_brown'; }
+
+        static getPNG(): string { return require('assets/particles/particle_brown.png'); }
+    }
+    export class ParticlesParticleDarkBrown {
+        static getName(): string { return 'particle_darkBrown'; }
+
+        static getPNG(): string { return require('assets/particles/particle_darkBrown.png'); }
+    }
+    export class ParticlesParticleDarkGrey {
+        static getName(): string { return 'particle_darkGrey'; }
+
+        static getPNG(): string { return require('assets/particles/particle_darkGrey.png'); }
+    }
+    export class ParticlesParticleGrey {
+        static getName(): string { return 'particle_grey'; }
+
+        static getPNG(): string { return require('assets/particles/particle_grey.png'); }
+    }
+    export class ParticlesPortalOrangeParticle {
+        static getName(): string { return 'portal_orangeParticle'; }
+
+        static getPNG(): string { return require('assets/particles/portal_orangeParticle.png'); }
+    }
+    export class ParticlesSmoke {
+        static getName(): string { return 'smoke'; }
+
+        static getPNG(): string { return require('assets/particles/smoke.png'); }
+    }
     export class Piratetiles {
         static getName(): string { return 'piratetiles'; }
 
@@ -35,6 +115,46 @@ export namespace Images {
         static getName(): string { return 'ship'; }
 
         static getPNG(): string { return require('assets/player/ship.png'); }
+    }
+    export class TreasureBoxCrateDouble {
+        static getName(): string { return 'boxCrate_double'; }
+
+        static getPNG(): string { return require('assets/treasure/boxCrate_double.png'); }
+    }
+    export class TreasureBoxCrateSingle {
+        static getName(): string { return 'boxCrate_single'; }
+
+        static getPNG(): string { return require('assets/treasure/boxCrate_single.png'); }
+    }
+    export class TreasureBoxCrate {
+        static getName(): string { return 'boxCrate'; }
+
+        static getPNG(): string { return require('assets/treasure/boxCrate.png'); }
+    }
+    export class TreasureBronze1 {
+        static getName(): string { return 'bronze_1'; }
+
+        static getPNG(): string { return require('assets/treasure/bronze_1.png'); }
+    }
+    export class TreasureCarrot {
+        static getName(): string { return 'carrot'; }
+
+        static getPNG(): string { return require('assets/treasure/carrot.png'); }
+    }
+    export class TreasureChest {
+        static getName(): string { return 'chest'; }
+
+        static getPNG(): string { return require('assets/treasure/chest.png'); }
+    }
+    export class TreasureGold1 {
+        static getName(): string { return 'gold_1'; }
+
+        static getPNG(): string { return require('assets/treasure/gold_1.png'); }
+    }
+    export class TreasureSilver1 {
+        static getName(): string { return 'silver_1'; }
+
+        static getPNG(): string { return require('assets/treasure/silver_1.png'); }
     }
     export class WaterTile {
         static getName(): string { return 'water_tile'; }
