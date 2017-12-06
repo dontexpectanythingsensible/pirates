@@ -164,6 +164,16 @@ export namespace Images {
 }
 
 export namespace Spritesheets {
+    export class SpritesheetsExplosion7575 {
+        static getName(): string { return 'explosion.[75,75]'; }
+
+        static getPNG(): string { return require('assets/spritesheets/explosion.[75,75].png'); }
+        static getFrameWidth(): number { return 75; }
+        static getFrameHeight(): number { return 75; }
+        static getFrameMax(): number { return -1; }
+        static getMargin(): number { return 0; }
+        static getSpacing(): number { return 0; }
+    }
     export class SpritesheetsMetalslugMummy374518 {
         static getName(): string { return 'metalslug_mummy.[37,45,18,0,0]'; }
 

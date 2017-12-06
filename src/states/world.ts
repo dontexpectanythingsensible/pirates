@@ -7,8 +7,7 @@ class Enemy extends Phaser.Sprite {
         super(game, x, y, sprite);
 
         this.explosions = game.add.group();
-        this.explosions.createMultiple(5, Assets.Images.EffectsExplosion1.getName());
-        // this.game = game;
+        this.explosions.createMultiple(5, Assets.Spritesheets.SpritesheetsExplosion7575.getName());
     }
 
     public health: number = 4;
@@ -30,11 +29,14 @@ class Enemy extends Phaser.Sprite {
         }
 
         const explosion = this.explosions.getFirstExists(false);
+        explosion.animations.add('bang');
+        explosion.animations.play('bang', 30, false, true);
+
         if (!explosion) {
             return;
         }
         explosion.reset(this.body.x, this.body.y);
-        setTimeout(() => explosion.kill(), 200);
+        explosion.play('bang', 30, false, true);
     }
 }
 
@@ -101,6 +103,7 @@ export default class World extends Phaser.State {
         enemy.body.drag.setTo(this.DRAG, this.DRAG);
         enemy.body.collideWorldBounds = true;
         enemy.body.bounce.set(0.5);
+        // enemy.animations.add('bang');
         this.enemies.add(enemy);
 
         this.game.input.keyboard.addKeyCapture([
